@@ -327,7 +327,6 @@ public class EnsembleCartes{
         }
         System.out.println();
         System.out.println();
-        
     }
     /*
  ████████████████   ████████████████   ████████████████   ████████████████
