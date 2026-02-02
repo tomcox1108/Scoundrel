@@ -1,0 +1,141 @@
+Bienvenue dans Scoundrel.
+
+1e règle :
+Ne prenez pas ce monde à la légère. Ni même comme un jeu. Si le
+courage vous manque, merci de rebrousser chemin.
+
+2e règle :
+Chaque tour, vous serez confronté a une "salle", constituée de 4
+cartes. Vous aurez le droit de :
+1 - L'éviter. Dans ce cas, les cartes seront mises en dessous du 
+    paquet. Attention, si vous évitez une salle, vous devrez
+    affronter la suivante.
+2 - L'affronter. Dans ce cas, vous devrez jouer et assumer les effets
+    de 3 cartes de cette salle. La 4e participera à la salle suivante.
+
+3e règle :
+Lorsque vous choisissez une carte :
+1 - C'est un coeur : vous gagnez autant de pv qu'inscrit, mais ne 
+    dépasserez jamais vos 20 misérables points de vies.
+    Par ailleurs, vous ne pouvez consommez plusieurs cartes PV durant
+    la même salle. Celles utilisées ainsi seront donc gachées.
+2 - C'est une carte noire : un monstre vous attaque. Vous subissez
+    autant de dégats que la valeur de la carte. Cependant, avoir
+    une arme réduira les dégats du monstre d'autant de la valeur
+    que cette arme possède.
+3 - C'est un carreau. Ou plutot, une arme. Vous équipez
+    obligatoirement cette arme et jetez celle aquise précédemment.
+    Comme dit plus haut, cette arme vous permettra de réduire
+    les dégats infligés par les monstres.
+    Exemple : vous avez l'arme 5 et un monstre 7 vous attaque.
+    Vous prenez 2 dégats. A l'inverse, l'arme 8 sur le monstre 3 :
+    Vous ne prenez aucun dégât.
+
+    Cependant ! 
+    Si une arme a bloqué un monstre de valeur X, elle ne pourra que
+    bloquer des monstres de valeur inférieure.
+    Exemple : Vous avez, avec votre arme 8, bloqué un monstre 9.
+    Le prochain tour, un monstre 10 apparait. Si vous l'attaquez, vous
+    serez obligé de subir tous ses dégats.
+    De même pour un autre monstre de valeur 9.
+    La valeur max qu'une arme peut bloquer est affiché comme "maxArme"
+    sur votre carte personnage.
+
+4e règle :
+Une fois les trois cartes choisis, une nouvelle salle est créée et
+le processus recommence, jusqu'à une des deux instances de fin de partie :
+1 - Quand vous n'avez pas respecté la règle 1. Ou, dit autrement, 
+    quand vous dépassez le seuil sacrée des 0 points de vie, et mourrez
+    pitoyablement.
+2 - Vous parvenez à bout des 52 cartes du donjon, et sortez vainqueur.
+
+Les interfaces :
+Voici la pile de jeu :
+ ████████████████
+██              ██
+█                █
+█                █
+█     PILE :     █
+█       48       █
+█     CARTES     █
+█                █
+█                █
+██              ██
+██████████████████
+██████████████████
+██████████████████
+ ████████████████
+Elle rétrécit au fur et à mesure qu'elle se vide.
+
+Voici les trois types de cartes :
+ ████████████████   ████████████████   ████████████████ 
+██              ██ ██              ██ ██              ██  
+█ ♥ - 10         █ █ ♦ - 3          █ █ ♣ - 9          █ 
+█                █ █                █ █                █
+█   ████  ████   █ █   ████         █ █    █▄    ▄█    █
+█  ████████████  █ █   ██████  ██   █ █                █ 
+█  ████████████  █ █     ████████   █ █     ▄█▀▀█▄     █ 
+█     ██████     █ █       ████     █ █                █
+█       ██       █ █     ████  ██   █ █                █ 
+██              ██ ██              ██ ██              ██ 
+ ████████████████   ████████████████   ████████████████  
+
+Voici votre interface joueur :
+ █████████████████
+██               ██
+█ PV : 20         █
+█ ARME : 5        █
+█ USURE : 13      █
+█                 █
+█    ██     ██    █
+█                 █
+█      █████      █
+██               ██
+ █████████████████
+
+ Et enfin, voici une interface d'un tour type :
+ ████████████████
+██              ██
+█                █
+█                █
+█     PILE :     █
+█       48       █
+█     CARTES     █
+█                █
+█                █
+██              ██
+██████████████████
+██████████████████
+██████████████████
+ ████████████████
+█╔════════════════════════════════════════════════╗
+█║ Vous arrivez dans une salle du donjon.         ║
+█╚════════════════════════════════════════════════╝
+ ████████████████   ████████████████   ████████████████   ████████████████
+██              ██ ██              ██ ██              ██ ██              ██
+█ ? - 1          █ █ ? - 2          █ █ ? - 4          █ █ ? - 5          █ 
+█                █ █                █ █                █ █                █
+█    █▄    ▄█    █ █   ████  ████   █ █   ████  ████   █ █   ████         █
+█                █ █  ████████████  █ █  ████████████  █ █   ██████  ██   █
+█     ▄█▀▀█▄     █ █  ████████████  █ █  ████████████  █ █     ████████   █
+█                █ █     ██████     █ █     ██████     █ █       ████     █
+█                █ █       ██       █ █       ██       █ █     ████  ██   █
+██              ██ ██              ██ ██              ██ ██              ██
+ ████████████████   ████████████████   ████████████████   ████████████████
+
+                             █████████████████
+                            ██               ██
+                            █ PV : 20         █
+                            █ ARME : Aucune   █
+                            █ USURE : 13      █
+                            █                 █
+                            █    ██     ██    █
+                            █                 █
+                            █      █████      █
+                            ██               ██
+                             █████████████████
+Choisissez la carte à jouer. De 1 à 4.
+5 pour fuir cette salle. :
+
+Bref. Maintenant du vent.
+

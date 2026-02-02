@@ -14,10 +14,10 @@ Bonne chance.
 Greetings.
 Welcome to Scoundrel.
 
-Prerequires : have a Java version higher than the 20.0.0 one.
+Prerequisite : Java version 20 or higher.
 
 If you know how to use Bash/PowerShell/Zsh... you'll know how to launch the game.
-However, put the folder on your desktop, open a terminal and execute :
+Otherwise, place the folder on your desktop, open a terminal and run :
 cd ~/desktop/Scoundrel/Ressources && javac Scoundrel.java && java Scoundrel
 Good luck.
 
@@ -25,4 +25,10 @@ Good luck.
 Merhaba.
 Scoundrel'e hoş geldiniz.
 
-Ön koşullar : 
+Önkoşul: Java sürüm 20 veya üzeri.
+
+Bash/PowerShell/Zsh kullanmayı biliyorsanız, oyunu başlatabileceksiniz.
+
+Aksi takdirde, klasörü masaüstünüze yerleştirin, bir terminal açın ve şunu çalıştırın:
+cd ~/desktop/Scoundrel/Resources && javac Scoundrel.java && java Scoundrel
+İyi şanslar. 

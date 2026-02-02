@@ -4,6 +4,7 @@ public class Player {
     int maxDamage = 13;
     int canSkip = 2;
     boolean alreadyHealed = false;
+    Langue langue = Langue.FR;
 
     void printlnPlayer(){
         System.out.println("                             █████████████████");
@@ -25,12 +26,12 @@ public class Player {
         }
         
         if(this.maxDamage == 0){
-            System.out.println("                            █ maxArme : Cassée█");
+            System.out.println("                            █ USURE : Cassée  █");
         }
         else if(this.maxDamage < 10){
-            System.out.println("                            █ maxArme : " + this.maxDamage +"     █");
+            System.out.println("                            █ USURE : " + this.maxDamage +"       █");
         }else{
-            System.out.println("                            █ maxArme : " + this.maxDamage +"    █");
+            System.out.println("                            █ USURE : " + this.maxDamage +"       █");
         }
         System.out.println("                            █                 █");
         System.out.println("                            █    ██     ██    █");

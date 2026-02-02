@@ -36,7 +36,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 
 class Scoundrel{
+    static final String clear = "\033[2J\033[H";
     public static void main(String[] args){
+        Player player = new Player();
         int choix;
         do{
 
@@ -44,10 +46,10 @@ class Scoundrel{
             Scanner entry = new Scanner(System.in);
             boxln("Bienvenue dans Scoundrel.");
             entry.nextLine();
-
+            
             /*menu */
-            System.out.print("1 - Jouer. \n2 - Les règles. \n3 - Quitter. \nQue voulez vous faire ? ");
-            choix = momentDeSaisie(3, entry);
+            System.out.print("1 - Jouer. \n2 - Les règles. \n3 - Paramêtres \n4 - Quitter. \nQue voulez vous faire ? ");
+            choix = momentDeSaisie(4, entry);
             if(choix == 1){
 
                 /*creation de la pile, du donjon et du joueur*/
@@ -56,8 +58,6 @@ class Scoundrel{
                 pile.melangerPile();
                 
                 EnsembleCartes donjon = new EnsembleCartes(4);
-        
-                Player player = new Player();
         
                 /*creation du jeu */
                 while(player.pv > 0 && !pile.isEmpty(donjon)){
@@ -80,7 +80,7 @@ class Scoundrel{
                             while(!donjon.isDone() && player.pv > 0){
                                 donjon.printlnDonjon();
                                 player.printlnPlayer();
-                                System.out.print("Votre choix : ");
+                                System.out.print("\nVotre choix : ");
                                 choix = momentDeSaisie(4, entry);
                                 donjon.jouerCarte(player, choix-1);
                             }
@@ -105,9 +105,22 @@ class Scoundrel{
                 }
             }
             else if(choix == 2){
-                lesRegles();
+                lesRegles(player.langue);
             }
-        }while(choix != 3);
+            else if(choix == 3){
+                System.out.println("Langue : \n1 - Francais\n2 - English\n3 - Türkçe");
+                choix = momentDeSaisie(3, entry);
+                if(choix == 1){
+                    player.langue = Langue.FR;
+                }
+                else if(choix == 2){
+                    player.langue = Langue.EN;
+                }
+                else if(choix == 3){
+                    player.langue = Langue.TR;
+                }
+            }
+        }while(choix != 4);
     }
 
     public static int momentDeSaisie(int max, Scanner input){
@@ -260,14 +273,39 @@ class Scoundrel{
         }
     }
 
-    static void lesRegles(){
-        try (BufferedReader br = new BufferedReader(new FileReader("./txt/regles.txt"))){
-        String line;
-            while ((line = br.readLine()) != null){
-                System.out.println(line);
+    static void lesRegles(Langue langue){
+        if(langue == Langue.FR){
+            try (BufferedReader br = new BufferedReader(new FileReader("../txt/reglesFR.txt"))){
+            String line;
+                while ((line = br.readLine()) != null){
+                    System.out.println(line);
+                    Thread.sleep(100);
+                }
+            } catch (Exception e) {
+                System.out.println("Erreur lecture fichier");
             }
-        } catch (Exception e) {
-            System.out.println("Erreur lecture fichier");
+        }
+        else if(langue == Langue.EN){
+            try (BufferedReader br = new BufferedReader(new FileReader("../txt/reglesEN.txt"))){
+            String line;
+                while ((line = br.readLine()) != null){
+                    System.out.println(line);
+                    Thread.sleep(100);
+                }
+            } catch (Exception e) {
+                System.out.println("Erreur lecture fichier");
+            }
+        }
+        else if(langue == Langue.TR){
+            try (BufferedReader br = new BufferedReader(new FileReader("../txt/reglesTR.txt"))){
+            String line;
+                while ((line = br.readLine()) != null){
+                    System.out.println(line);
+                    Thread.sleep(100);
+                }
+            } catch (Exception e) {
+                System.out.println("Erreur lecture fichier");
+            }
         }
     }
 }

@@ -1,0 +1,139 @@
+Welcome to Scoundrel.
+
+Rule 1:
+Don't take this world lightly. Not even as a game. If you lack courage, 
+please turn back.
+
+Rule 2:
+Each turn, you will face a "room," consisting of 4 cards. You will have 
+the right to:
+1 - Avoid it. In this case, the cards will be placed at the bottom of the
+    deck. Be careful, if you avoid a room, you will have to face the next 
+    one.
+2 - Face it. In this case, you will have to play and assume the effects of 
+    3 cards from that room. The 4th card will be used in the next room.
+
+Rule 3:
+When you choose a card:
+1 - It's a heart: you gain the number of hit points shown, but you will 
+    never exceed your measly 20 hit points.
+    Furthermore, you cannot use multiple HP cards in the same room. Those 
+    used in this way will be wasted.
+2 - It's a black card: a monster attacks you. You take damage equal to 
+    the card's value. However, having a weapon will reduce the monster's 
+    damage by the value of that weapon.
+3 - It's a diamond. Or rather, a weapon. You must equip this weapon and 
+    discard the one you previously acquired.
+    As mentioned above, this weapon will allow you to reduce the damage inflicted by monsters.
+    Example: you have weapon 5 and a monster 7 attacks you.
+    You take 2 damage. Conversely, weapon 8 against a monster 3:
+    You take no damage.
+
+    However!
+    If a weapon has blocked a monster of value X, it can only
+    block monsters of a lower value.
+    Example: You blocked a monster of value 9 with your weapon of value 8.
+    The next turn, a monster of value 10 appears. If you attack it, you
+    will be forced to take all of its damage.
+    The same applies to another monster of value 9.
+    The maximum value a weapon can block is displayed as "maxWeapon"
+    on your character card.
+
+Rule 4:
+Once the three cards are chosen, a new room is created and
+the process begins again, until one of the two end-game instances:
+1 - When you have not followed rule 1. Or, in other words,
+    when you exceed the sacred threshold of 0 hit points and die
+    pitifully.
+2 - You manage to clear all 52 cards in the dungeon and emerge victorious.
+
+The interfaces:
+Here is the game deck:
+ ████████████████
+██              ██
+█                █
+█                █
+█     DECK :     █
+█       48       █
+█     CARDS      █
+█                █
+█                █
+██              ██
+██████████████████
+██████████████████
+██████████████████
+ ████████████████
+It shrinks as it empties. 
+
+Here are the three differents cards :
+ ████████████████   ████████████████   ████████████████ 
+██              ██ ██              ██ ██              ██  
+█ ♥ - 10         █ █ ♦ - 3          █ █ ♣ - 9          █ 
+█                █ █                █ █                █
+█   ████  ████   █ █   ████         █ █    █▄    ▄█    █
+█  ████████████  █ █   ██████  ██   █ █                █ 
+█  ████████████  █ █     ████████   █ █     ▄█▀▀█▄     █ 
+█     ██████     █ █       ████     █ █                █
+█       ██       █ █     ████  ██   █ █                █ 
+██              ██ ██              ██ ██              ██ 
+ ████████████████   ████████████████   ████████████████  
+
+Here's the player interface :
+ █████████████████
+██               ██
+█ HP : 20         █
+█ WEAPON : 5      █
+█ WEAR : 13       █
+█                 █
+█    ██     ██    █
+█                 █
+█      █████      █
+██               ██
+ █████████████████
+
+And finally, here is an interface for a typical turn :
+ ████████████████
+██              ██
+█                █
+█                █
+█     DECK :     █
+█       48       █
+█     CARDS      █
+█                █
+█                █
+██              ██
+██████████████████
+██████████████████
+██████████████████
+ ████████████████
+█╔════════════════════════════════════════════════╗
+█║ You arrive in a room of the dungeon.           ║
+█╚════════════════════════════════════════════════╝
+ ████████████████   ████████████████   ████████████████   ████████████████
+██              ██ ██              ██ ██              ██ ██              ██
+█ ? - 1          █ █ ? - 2          █ █ ? - 4          █ █ ? - 5          █ 
+█                █ █                █ █                █ █                █
+█    █▄    ▄█    █ █   ████  ████   █ █   ████  ████   █ █   ████         █
+█                █ █  ████████████  █ █  ████████████  █ █   ██████  ██   █
+█     ▄█▀▀█▄     █ █  ████████████  █ █  ████████████  █ █     ████████   █
+█                █ █     ██████     █ █     ██████     █ █       ████     █
+█                █ █       ██       █ █       ██       █ █     ████  ██   █
+██              ██ ██              ██ ██              ██ ██              ██
+ ████████████████   ████████████████   ████████████████   ████████████████
+
+                             █████████████████
+                            ██               ██
+                            █ HP : 20         █
+                            █ WEAPON : None   █
+                            █ WEAR : 13       █
+                            █                 █
+                            █    ██     ██    █
+                            █                 █
+                            █      █████      █
+                            ██               ██
+                             █████████████████
+Chose the card to play. Between 1 and 4.
+5 to escape this room. :
+
+Anyway. Now push off.
+
